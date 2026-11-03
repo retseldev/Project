@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Main page | PLES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="side">
+        <a class="brand" href="dashboard.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9c3-4 5-4 7.5 0S16.5 13 22 9M2 15c3-4 5-4 7.5 0S16.5 19 22 15" /></svg>
+          PLES
+        </a>
+        <nav id="nav" aria-label="Main">
+          <a href="#advising" data-roles="teacher advisor guardian student">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3" /><path d="M8 3v4M16 3v4M4 10h16" /></svg><span>Advising</span>
+          </a>
+          <a href="#sessions" data-roles="teacher advisor guardian student">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg><span>Sessions</span>
+          </a>
+          <a href="#tutors" data-roles="teacher advisor">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" /><path d="M3 19c0-3.2 2.7-5 6-5s6 1.8 6 5" /><circle cx="17" cy="9" r="2.4" /><path d="M17.5 14.2c2.2.2 3.5 1.7 3.5 4" /></svg><span>Tutors</span>
+          </a>
+          <a href="#attendance" data-roles="teacher advisor">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="m8 12.5 2.7 2.7L16 9.5" /></svg><span>Attendance</span>
+          </a>
+          <a href="#parent" data-roles="guardian">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 11 8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z" /></svg><span>Parents</span>
+          </a>
+        </nav>
+        <a class="logout logout-link" href="index.html">Log out</a>
+      </aside>
+
+      <div class="main">
+        <header class="banner">
+          <svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g fill="none" stroke-linecap="round" stroke-width="3">
+              <path d="M-20 60C160 -20 340 140 520 60S880 -20 1060 60 1240 140 1460 60" stroke="#fff" stroke-opacity=".3" />
+              <path transform="translate(0 55)" d="M-20 60C160 -20 340 140 520 60S880 -20 1060 60 1240 140 1460 60" stroke="#FFC93C" stroke-opacity=".6" />
+              <path transform="translate(0 110)" d="M-20 60C160 -20 340 140 520 60S880 -20 1060 60 1240 140 1460 60" stroke="#35B6C0" stroke-opacity=".7" />
+            </g>
+          </svg>
+          <div class="banner-text">
+            <h1 id="hello">Welcome</h1>
+            <p id="today"></p>
+          </div>
+          <label class="role-pick">Viewing as
+            <select id="role">
+              <option value="teacher">Teacher</option>
+              <option value="advisor">Advisor or proctor</option>
+              <option value="guardian">Guardian</option>
+              <option value="student">Student</option>
+            </select>
+          </label>
+          <a class="mobile-logout logout-link" href="index.html">Log out</a>
+        </header>
+
+        <main class="content">
+          <section id="advising" class="view" hidden>
+            <h2>Academic advising</h2>
+            <p class="lead">Book a time with an advisor or proctor.</p>
+            <div id="advisors" class="grid"></div>
+            <h3>My appointments</h3>
+            <ul id="appts" class="list"></ul>
+          </section>
+
+          <section id="sessions" class="view" hidden>
+            <h2>Study session scheduling</h2>
+            <p class="lead">Plan a study session and see what is coming up.</p>
+            <form id="session-form" class="card form-row">
+              <label>Subject
+                <select name="subject" required>
+                  <option>Reading</option><option>Math</option><option>Science</option><option>Writing</option>
+                </select>
+              </label>
+              <label>Date <input name="date" type="date" required /></label>
+              <label>Time <input name="time" type="time" required /></label>
+              <label>Topic <input name="topic" placeholder="e.g. Fractions" minlength="2" required /></label>
+              <button class="btn" type="submit">Schedule session</button>
+            </form>
+            <ul id="session-list" class="list"></ul>
+          </section>
+
+          <section id="tutors" class="view" hidden>
+            <h2>Tutor management</h2>
+            <p class="lead">Add peer tutors and mark who is available.</p>
+            <form id="tutor-form" class="card form-row">
+              <label>Tutor name <input name="name" autocomplete="off" minlength="2" required /></label>
+              <label>Subject
+                <select name="subject"><option>Reading</option><option>Math</option><option>Science</option><option>Writing</option></select>
+              </label>
+              <button class="btn" type="submit">Add tutor</button>
+            </form>
+            <ul id="tutor-list" class="list"></ul>
+          </section>
+
+          <section id="attendance" class="view" hidden>
+            <h2>Attendance tracking</h2>
+            <p class="lead">Mark each learner for today. Guardians see the result right away.</p>
+            <p id="summary" class="summary" role="status"></p>
+            <ul id="roster" class="list"></ul>
+          </section>
+
+          <section id="parent" class="view" hidden>
+            <h2>Parent portal</h2>
+            <p class="lead">See whether your child is at school today.</p>
+            <div id="child" class="card child"></div>
+            <h3>This week</h3>
+            <ul id="week" class="week"></ul>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

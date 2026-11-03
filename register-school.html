@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register to school | PLES</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="forms.js" defer></script>
+  </head>
+  <body>
+    <main class="auth-shell">
+      <aside class="auth-aside">
+        <a class="brand" href="index.html">〰 PLES</a>
+        <div>
+          <p class="eyebrow">Learn together</p>
+          <h1>Let’s make learning more connected.</h1>
+          <p>A friendly school platform for peer support, study sessions and academic advising.</p>
+        </div>
+        <p class="aside-foot">For preschool and elementary communities</p>
+      </aside>
+
+      <section class="auth-main">
+        <div class="auth-card school-card">
+          <div class="auth-topline">
+            <a href="index.html">← Back to home</a>
+            <span>PLES</span>
+          </div>
+
+          <h2>Register to school</h2>
+          <p class="intro">Tell us a little about your school and its main contact.</p>
+
+          <form class="demo-form" data-success="Your school details passed validation.">
+            <div class="school-fields">
+              <div class="field full-width">
+                <label for="school-name">School name</label>
+                <input id="school-name" name="schoolName" placeholder="e.g. Meadowbrook Elementary" minlength="2" required />
+              </div>
+
+              <div class="field">
+                <label for="school-type">School type</label>
+                <select id="school-type" name="schoolType" required>
+                  <option value="">Choose one</option>
+                  <option value="preschool">Preschool</option>
+                  <option value="elementary">Elementary school</option>
+                  <option value="both">Preschool and elementary</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="school-email">School contact email</label>
+                <input id="school-email" name="schoolEmail" type="email" autocomplete="email" placeholder="office@school.edu" required />
+              </div>
+
+              <div class="field">
+                <label for="school-phone">School phone</label>
+                <input id="school-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000" minlength="7" required />
+              </div>
+
+              <div class="field">
+                <label for="school-address">School address</label>
+                <input id="school-address" name="address" autocomplete="street-address" placeholder="Street, city, state" minlength="4" required />
+              </div>
+
+              <div class="field">
+                <label for="admin-name">Administrator name</label>
+                <input id="admin-name" name="adminName" autocomplete="name" placeholder="Full name" minlength="2" required />
+              </div>
+
+              <div class="field">
+                <label for="admin-role">Administrator role</label>
+                <input id="admin-role" name="adminRole" placeholder="Principal, director…" minlength="2" required />
+              </div>
+
+              <div class="field full-width">
+                <label for="admin-email">Administrator email</label>
+                <input id="admin-email" name="adminEmail" type="email" autocomplete="email" placeholder="admin@school.edu" required />
+              </div>
+            </div>
+
+            <button class="submit-button" type="submit">Submit school details →</button>
+            <p class="form-success" role="status" hidden></p>
+          </form>
+
+          <p class="footnote">Demo only. School details are not registered or saved to a server.</p>
+          <nav class="auth-links">
+            <a href="register.html">Create an individual account</a>
+            <a href="login.html">Log in</a>
+          </nav>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

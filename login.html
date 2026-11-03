@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in | PLES</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="forms.js" defer></script>
+  </head>
+  <body>
+    <main class="auth-shell">
+      <aside class="auth-aside">
+        <a class="brand" href="index.html">〰 PLES</a>
+        <div>
+          <p class="eyebrow">Learn together</p>
+          <h1>Your school day, in sync.</h1>
+          <p>A friendly school platform for peer support, study sessions and academic advising.</p>
+        </div>
+        <p class="aside-foot">For preschool and elementary communities</p>
+      </aside>
+
+      <section class="auth-main">
+        <div class="auth-card">
+          <div class="auth-topline">
+            <a href="index.html">← Back to home</a>
+            <span>PLES</span>
+          </div>
+
+          <h2>Log in to PLES</h2>
+          <p class="intro">Pick up where your school community left off.</p>
+
+          <form class="demo-form" data-success="Your login was accepted for this demo.">
+            <label for="login-email">Email address</label>
+            <input
+              id="login-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@school.edu"
+              required
+            />
+
+            <label for="login-password">Password</label>
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="At least 6 characters"
+              minlength="6"
+              required
+            />
+
+            <button class="submit-button" type="submit">Log in →</button>
+            <p class="form-success" role="status" hidden></p>
+          </form>
+
+          <p class="footnote">Demo only. No credentials are checked and no account is accessed.</p>
+          <nav class="auth-links">
+            <a href="register.html">Create an account</a>
+            <a href="register-school.html">Register to school</a>
+          </nav>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
